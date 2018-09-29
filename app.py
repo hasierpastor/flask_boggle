@@ -23,7 +23,27 @@ def generate_board():
 def validate_guess():
     """receives guess from Ajax call and validates if guess is a word. Returns json response which
     contains dictionary {'result': ok} {'result': not-on-board} {'result': not-a-word} """
-    guess = request.form.get('guess')
+    guess = request.form.get('word')
     is_word = boggle_game.check_valid_word(session['board'], guess)
     result = {'result': is_word}
+    session['guesses'] = []
+    if result.get('result') is 'ok':
+        session['guesses'].append(guess)
     return jsonify(result)
+
+@app.route('/end_game', methods=['POST'])
+def display_end_game_page():
+    if session.get('highest_score'):
+        if int(request.form.get('score')) > int(session.get('highest_score')):
+            session['highest_score'] = request.form.get('score')
+    else:
+        session['highest_score'] = request.form.get('score')
+
+    if session.get('num_games'):
+        session['num_games'] = int(session['num_games']) + 1
+    else:
+        session['num_games'] = 1
+
+    response = {'high_score': session['highest_score'], 'games_played': session['num_games']}
+
+    return jsonify(response)

@@ -1,4 +1,43 @@
-<!DOCTYPE html>
+{%extends 'base.html' %}
+
+{% block title %}Boggle Board{%endblock%}
+
+{% block timer %}<div id="timer-container"></div>{%endblock%}
+
+{% block body %}
+    <div>
+        <p>High score:<span id="high_score">{{ session['highest_score'] }}</span></p>
+        <p>Number of games played:<span id="games-played">{{ session['num_games'] }}</span></p>
+    </div>
+    <div class="container">
+    <table class="table table-bordered" style="width:40px">
+      <tbody>
+        {% for row in board %}
+        <tr>
+          {% for item in row %}
+        <td>{{item}}</td>
+          {% endfor %}
+        </tr> 
+        {% endfor %}
+      </tbody>
+    </table>
+</div>
+<div class="container">
+    <label for="guess">Guess a word:</label>
+    <input type="text" name="guess" id="guess">
+    <button type="submit" id="submit-guess">Submit</button>
+</div>
+<div class="container">
+  <p id="guess-message"></p>
+</div>
+<div class="container">
+  <p>Score: <span id="score"></span></p>
+</div>
+{%endblock%}
+
+
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -9,6 +48,12 @@
   <title>Document</title>
 </head>
 <body>
+  <div class="container">
+      <form action="/">
+        <button type="submit" id="new-game">Start game!</button>
+      </form>
+      <div id="timer-container"></div>
+  </div>
   <div class="container">
     <table class="table table-bordered" style="width:40px">
       <tbody>
@@ -23,11 +68,20 @@
     </table>
 </div>
 <div class="container">
-  <form action="/" method='POST'>
     <label for="guess">Guess a word:</label>
     <input type="text" name="guess" id="guess">
     <button type="submit" id="submit-guess">Submit</button>
-  </form>
+</div>
+<div class="container">
+  <p id="guess-message"></p>
+</div>
+<div class="container">
+  <p>Score: <span id="score"></span></p>
 </div>
 </body>
-</html>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+<script src="/static/script.js"></script>
+</html> -->
