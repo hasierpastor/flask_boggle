@@ -3,6 +3,7 @@ let high_score;
 
 $(document).ready(function() {
   //when new-game button is pressed, resets timer and score
+
   $('#high_score').text(high_score);
   makeTimer();
 
@@ -47,7 +48,7 @@ function makeTimer() {
     $('#submit-guess').off('click');
     let score = $('#score').text() || 0;
     send_score_server(score);
-  }, 20000);
+  }, 60000);
 }
 
 function send_score_server(score) {

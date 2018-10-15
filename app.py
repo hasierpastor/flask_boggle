@@ -10,6 +10,13 @@ debug = DebugToolbarExtension(app)
 boggle_game = Boggle()
 
 @app.route('/')
+def generate_homepage():
+
+    return render_template('home.html')
+
+
+
+@app.route('/play')
 def generate_board():
     """creates a new board and stores board in session"""
     new_board = boggle_game.make_board()
@@ -19,7 +26,7 @@ def generate_board():
     return render_template('board.html', board=new_board,)
 
 
-@app.route('/', methods=['POST'])
+@app.route('/play', methods=['POST'])
 def validate_guess():
     """receives guess from Ajax call and validates if guess is a word. Returns json response which
     contains dictionary {'result': ok} {'result': not-on-board} {'result': not-a-word} """

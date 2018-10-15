@@ -1,11 +1,35 @@
-/* .auto {
-  table-layout: auto;
+/* do new game like in card memory game */
+
+body {
+  background: linear-gradient(to right, #ffefba, #ffffff);
 }
 
-table {
-  width: 10px;
+h1,
+.container {
+  font-family: 'Esteban', serif;
+}
+
+#game,
+#board {
+  margin: 20px 20px;
+}
+
+#guess-container {
+  margin-left: 60px;
+  margin-top: 20px;
+}
+
+.table {
+  border-radius: 7px;
+  margin: 0px auto;
+  float: none;
+  border-collapse: separate;
+  border-spacing: 1em;
+  width: 250px;
+  background-color: coral;
+  border: 1px solid coral;
 }
 
 td {
-  width: 4px;
-} */
+  background-color: white;
+}
