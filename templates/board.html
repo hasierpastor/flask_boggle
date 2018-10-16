@@ -8,10 +8,11 @@
         <p id="timer-container"></p>
         </div>
         <div class="row justify-content-center">
-          <p>High score: <span id="high_score">{{ session['highest_score'] }}</span></p>
+          <p id="high-score">High score: <span>{{ session['highest_score'] }}</span><span class="ec ec-ok-hand"></span>
+          </p>
         </div>
         <div class="row justify-content-center">
-          <p>Number of games played: <span id="games-played">{{ session['num_games'] }}</span></p>
+          <p id="games-played">Games played: <span>{{ session['num_games'] }}</span></p>
         <div class="row justify-content-center">
     </div>  
     <div class="container justify-content-center" id="table-container">
@@ -35,7 +36,7 @@
   </div>
 <div class="container text-center mt-2">
   <p id="guess-message"></p>
-  <p>Score: <span id="score"></span></p>
+  <p id="score">Score: <span></span></p>
 </div>
 {%endblock%}
 

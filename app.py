@@ -39,7 +39,7 @@ def validate_guess():
 
 
 
-
+#add get method to render end page 
 @app.route('/end_game', methods=['POST'])
 def display_end_game_page():
     if session.get('highest_score'):
