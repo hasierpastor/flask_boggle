@@ -12,11 +12,16 @@ $(document).ready(function() {
       .val()
       .toLowerCase();
     $.ajax({
-      url: '/',
+      url: '/play',
       type: 'POST',
       data: { word: guess },
       success: resp => {
-        $('#guess-message').text(`Message: ${resp.result}`);
+        //break into seperaate function
+        if (resp.result === 'ok') {
+          $('#guess-message').text(`Good Job!`);
+        } else if (resp.result === 'not-word') {
+          $('#guess-message').text(`Not a valid word :(`);
+        }
         displayScore(updateScore(resp.result, guess));
         $('#guess').val('');
       }

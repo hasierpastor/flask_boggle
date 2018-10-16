@@ -4,19 +4,20 @@
 
 {% block body %}
 
-<div class="container m-3">
-  <div class="row justify-content-center">
+<div class="container">
+  <div class="row justify-content-center mt-3 mb-3">
     <h1 class="text-center">Welcome to Boggle!</h1>
   </div>
   <div class="row justify-content-center">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/4TsvAfukeS8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </iframe>
   </div>
-</div>
+<div class="row justify-content-center mt-3">
 <div class="container text-center" id="form">
   <form action="/play">
     <button class="btn btn-outline-primary" type="submit" id="new-game">Start game!</button>
   </form>
-
+</div>
+</div>
 
 {%endblock%}

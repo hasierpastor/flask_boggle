@@ -37,6 +37,9 @@ def validate_guess():
         session['guesses'].append(guess)
     return jsonify(result)
 
+
+
+
 @app.route('/end_game', methods=['POST'])
 def display_end_game_page():
     if session.get('highest_score'):
