@@ -15,7 +15,6 @@ def generate_homepage():
     return render_template('home.html')
 
 
-
 @app.route('/play')
 def generate_board():
     """creates a new board and stores board in session"""

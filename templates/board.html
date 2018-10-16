@@ -3,10 +3,16 @@
 {% block title %}Boggle Board{%endblock%}
 
 {% block body %}
-    <div class="container" id="timer-container"></div>
     <div id="game-data" class="container">
-    <p>High score:<span id="high_score">{{ session['highest_score'] }}</span></p>
-      <p>Number of games played:<span id="games-played">{{ session['num_games'] }}</span></p>
+        <div class="row justify-content-center">
+        <p id="timer-container"></p>
+        </div>
+        <div class="row justify-content-center">
+          <p>High score:<span id="high_score">{{ session['highest_score'] }}</span></p>
+        </div>
+        <div class="row justify-content-center">
+          <p>Number of games played:<span id="games-played">{{ session['num_games'] }}</span></p>
+        <div class="row justify-content-center">
     </div>  
     <div class="container justify-content-center" id="table-container">
     <table class="table table-bordered">
@@ -22,9 +28,11 @@
     </table>
 </div>
 <div class="container text-center" id="guess-container">
+    <div class="row justify-content-center">
     <label for="guess">Guess a word:</label>
     <input type="text" name="guess" id="guess">
     <button class="btn btn-outline-primary" type="submit" id="submit-guess">Submit</button>
+    <div class="row justify-content-center">
 </div>
 <div class="container text-center">
   <p id="guess-message"></p>

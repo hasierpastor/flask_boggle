@@ -41,7 +41,7 @@ function makeTimer() {
   let count = 0;
   var newTimerId = setInterval(function() {
     ++count;
-    $('#timer-container').text(count);
+    $('#timer-container').text(`Timer: ${count}`);
   }, 1000);
   setTimeout(function() {
     clearTimeout(newTimerId);
